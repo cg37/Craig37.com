@@ -1,3 +1,7 @@
 {
-  "recommendations": ["Vue.volar"]
+  "recommendations": [
+    "Vue.volar",
+    "evondev.indent-rainbow-palettes",
+    "oderwat.indent-rainbow"
+  ]
 }
