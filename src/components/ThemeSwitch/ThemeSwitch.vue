@@ -1,22 +1,30 @@
 <template>
-  <div class="item switch" :class="theme" @click="theme = theme === 'dark' ? THEME.LIGHT : THEME.DARK">
-    <div class="bar"></div>
+  <div class="switch" >
+    <img :src="darkIcon" alt="dark">
+    <Button @checkBoxValue="checkBoxValue"></Button>
+    <img :src="sunIcon" alt="sun">
   </div>
 </template>
 <script setup lang="ts">
-import { useTheme } from '@/components/utils/useTheme';
-import { THEME } from '@/Model/const'
+import {useTheme} from '@/components/utils/useTheme';
+import Button from "@/components/ThemeSwitch/Button.vue";
+import {THEME} from '@/Model/const'
+import sunIcon from '@/assets/icon/sun.png';
+import darkIcon from '@/assets/icon/dark.png'
 
 const {theme} = useTheme();
+const checkBoxValue = (val) => {
+  theme.value = val ? THEME.LIGHT : THEME.DARK;
+};
 </script>
 <style lang="scss" scoped>
 .switch {
-  position: fixed;
-  top: 500px;
-  left: 700px;
-  width: 100px;
+  display: flex;
+}
+img {
+  width: 30px;
   height: 30px;
-  border-radius: 999px;
-  border: #535bf2 1px solid;
+  gap: 4px;
+  object-fit: contain;
 }
 </style>

@@ -1,8 +1,7 @@
 <template>
-<div class="container">
-  Craig's Site
-  <div class="theme">
-    <p>{{ theme }}</p>
+<div class="container item">
+  Craig Site
+  <div class="theme-switch">
     <ThemeSwitch />
   </div>
 </div>
@@ -11,29 +10,20 @@
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch.vue';
 import { useTheme } from '@/components/utils/useTheme';
 
-
 const {theme} = useTheme();
 </script>
 <style lang="scss" scoped>
 .container {
   width: 100%;
   height: 100px;
-  position: absolute;
+  position: fixed;
   top: 0;
-  background-color: white;
-  color: black
+
+}
+.theme-switch {
+  position: absolute;
+  top: 30px;
+  right: 50px;
 }
 </style>
-<style scoped lang="scss">
-.container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-.theme {
-  width: 100px;
-  height: 60px;
-  border: 1px solid red;
-  display: flex;
-}
-</style>
+
