@@ -1,0 +1,26 @@
+
+$themes: (
+  light: (
+    bgColor: #fff,
+    textColor: #000,
+  ),
+  dark: (
+    bgColor: #000,
+    textColor: #fff,
+  )
+);
+
+@mixin useTheme() {
+  @each $key, $value in $theme {
+    html[data-theme=#{key}] & 
+  }
+  html[datA-theme='light'] & {
+    background: #fff;
+  }
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  @include useTheme;
+}

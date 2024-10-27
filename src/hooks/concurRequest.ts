@@ -22,10 +22,10 @@ function concurRequest(urls: string[], maxNum: number):Promise<(Response | Error
       const url = urls[index];
       index++;
       try {
-        const resp = fetch(url)
+        const resp = await fetch(url)
         results[idx] = resp;
       }
-      catch(err) {
+      catch(err: any) {
         results[idx] = err;
       }
       finally{
