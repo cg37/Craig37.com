@@ -4,13 +4,12 @@
   <div class="theme">
     <p>{{ theme }}</p>
     <ThemeSwitch />
-    <p> {{ theme }} 主题</p>
   </div>
 </div>
 </template>
 <script lang="ts" setup>
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch.vue';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@/components/utils/useTheme';
 
 
 const {theme} = useTheme();
@@ -25,8 +24,16 @@ const {theme} = useTheme();
   color: black
 }
 </style>
-<style scoped lang="scss"> 
+<style scoped lang="scss">
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 .theme {
-  border: 1px solid red
+  width: 100px;
+  height: 60px;
+  border: 1px solid red;
+  display: flex;
 }
 </style>

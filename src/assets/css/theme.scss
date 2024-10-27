@@ -1,4 +1,3 @@
-
 $themes: (
   light: (
     bgColor: #fff,
@@ -9,18 +8,27 @@ $themes: (
     textColor: #fff,
   )
 );
+$curTheme: light;
 
-@mixin useTheme() {
-  @each $key, $value in $theme {
-    html[data-theme=#{key}] & 
+@mixin useThemes() {
+  @each $key, $value in $themes {
+    $curTheme: $key !global;
+    html[data-theme=#{key}] & {
+      @content;
+    }
   }
-  html[datA-theme='light'] & {
-    background: #fff;
-  }
+}
+
+@function getVar($key) {
+  $themeMap: map-get($themes, $curTheme);
+  @return map-get($themeMap, $key)
 }
 
 .item {
   width: 100px;
   height: 100px;
-  @include useTheme;
+  @include useThemes {
+    background: getVar('bgColor');
+    color: getVar('textColor');
+  }
 }
