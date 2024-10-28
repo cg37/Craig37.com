@@ -1,29 +1,19 @@
 <template>
   <label for="toggle">
-
-  <input type="checkbox" id="toggle" v-model="checkBoxValue">
+  <input type="checkbox" id="toggle" v-model="checkboxValue">
     <span></span>
   </label>
 </template>
 <script lang="ts" setup>
-import {ref, watch, defineEmits} from 'vue'
-import { useTheme } from '@/components/utils/useTheme';
+import {useTheme} from '@/components/utils/useTheme';
+import {THEME} from "@/Model/const";
+import {ref, watchEffect} from "vue";
 
-const emit = defineEmits<{
-  (e: 'checkBoxValue', value: boolean): void
-}> ()
-let checkBoxValue = ref<Boolean>(true)
-let {theme} = useTheme();
-watch(
-    ()=> checkBoxValue,
-    ()=> {
-      emit('checkBoxValue', checkBoxValue.value)
-    },
-    {
-      immediate: true,
-      deep: true
-    }
-)
+const {theme} = useTheme();
+const checkboxValue = ref<boolean>(theme.value === THEME.LIGHT)
+watchEffect(() => {
+  theme.value = checkboxValue.value ? THEME.LIGHT : THEME.DARK
+})
 </script>
 <style lang="scss" scoped>
 $__button-height: 30px;

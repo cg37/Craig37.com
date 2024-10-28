@@ -1,7 +1,8 @@
 import {ref, watchEffect} from 'vue';
 import { THEME } from '@/Model/const'
-const storageKey = "___theme___"
-const theme = ref<THEME>(localStorage.getItem(storageKey) as THEME || THEME.DARK);
+export const storageKey = "___theme___"
+
+const theme = ref<THEME>(localStorage.getItem(storageKey) as THEME ?? THEME.DARK);
 watchEffect(() => {
   document.documentElement.dataset.theme = theme.value
   localStorage.setItem(storageKey, theme.value)

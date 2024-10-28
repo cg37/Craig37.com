@@ -8,9 +8,7 @@
 </template>
 <script lang="ts" setup>
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch.vue';
-import { useTheme } from '@/components/utils/useTheme';
 
-const {theme} = useTheme();
 </script>
 <style lang="scss" scoped>
 .container {
@@ -18,7 +16,6 @@ const {theme} = useTheme();
   height: 100px;
   position: fixed;
   top: 0;
-
 }
 .theme-switch {
   position: absolute;
