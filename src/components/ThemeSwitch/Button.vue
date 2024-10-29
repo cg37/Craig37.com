@@ -5,7 +5,7 @@
   </label>
 </template>
 <script lang="ts" setup>
-import {useTheme} from '@/components/utils/useTheme';
+import {useTheme} from '@/utils/useTheme';
 import {THEME} from "@/Model/const";
 import {ref, watchEffect} from "vue";
 
