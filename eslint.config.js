@@ -7,7 +7,7 @@ export default ts.config(
 	...ts.configs.recommended,
 	...eslintPluginVue.configs['flat/recommended'],
 	{
-		files: ['*.vue', '**/*.vue'],
+		files: ['*.vue', '**/*.vue', '*.js', '**/*.js'],
 		rules: {
 			"vue/max-attributes-per-line": ["error", 
 				{
@@ -18,7 +18,7 @@ export default ts.config(
       "max": 1
     }
   }],
-		"no-undef": "off"
+		"no-undef": 'off'
 		},
 		languageOptions: {
 			parserOptions: {
