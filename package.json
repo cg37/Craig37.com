@@ -16,9 +16,15 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.27.0",
     "@types/node": "^22.7.5",
     "@vitejs/plugin-vue": "^5.0.5",
+    "eslint": "^9.27.0",
+    "eslint-config-xo": "^0.47.0",
+    "eslint-plugin-vue": "^10.1.0",
+    "globals": "^16.1.0",
     "sass": "^1.79.5",
+    "typescript-eslint": "^8.32.1",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "vite": "^5.3.1"
