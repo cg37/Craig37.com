@@ -18,8 +18,9 @@ import TopBar from '@/components/TopBar/index';
   height: 100%;
   background-image: url('/src/assets//howl049.jpg');
   background-repeat:no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 .content {
   color: black;

@@ -16,7 +16,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 const originalHeight = 76;  // 原始高度
 const minHeight = 60;        // 最小高度
-const threshold = 200;       // 滚动超过 100px 后才开始变化
+const threshold = 50;       // 滚动超过 100px 后才开始变化
 const currentHeight = ref(originalHeight);
 
 const bgOpacity = computed(() => {
