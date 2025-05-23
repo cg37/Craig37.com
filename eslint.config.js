@@ -9,16 +9,9 @@ export default ts.config(
 	{
 		files: ['*.vue', '**/*.vue', '*.js', '**/*.js'],
 		rules: {
-			"vue/max-attributes-per-line": ["error", 
-				{
-    "singleline": {
-      "max": 3
-    },      
-    "multiline": {
-      "max": 1
-    }
-  }],
-		"no-undef": 'off'
+			"vue/max-attributes-per-line": ["error", {"singleline": {"max": 3},"multiline": {"max": 1}}],
+			"no-undef": 'off',
+			"vue/singleline-html-element-content-newline": ["error", {"ignoreWhenNoAttributes": true,"ignoreWhenEmpty": true,"ignores": ["pre", "textarea", ...INLINE_ELEMENTS],"externalIgnores": []}]
 		},
 		languageOptions: {
 			parserOptions: {

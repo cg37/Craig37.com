@@ -6,13 +6,35 @@
     <div class="blog-title">
       Craig37
     </div>
-    <div class="menu-tab">
-      111
+    <div class="menu-container">
+      <div class="menu-item">
+        <div class="menu-title">首页</div>
+        <HomeIcon class="home icon"/>
+      </div>
+      <div class="menu-item">
+        <div class="menu-title">分类</div>
+        <GroupIcon class="group icon" />
+      </div>
+      <div class="menu-item">
+        <div class="menu-title">关于</div>
+        <ProfileIcon class="icon profile"/>
+      </div>
+      <!-- <div class="menu-item">
+        <div class="menu-title"></div>
+        <img src="" alt="">
+      </div>
+      <div class="menu-item">
+        <div class="menu-title"></div>
+        <img src="" alt="">
+      </div> -->
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import ProfileIcon from '@/assets/icon/user-solid.svg'
+import GroupIcon from '@/assets/icon/group-solid.svg'
+import HomeIcon from '@/assets/icon/home-solid.svg'
 
 const originalHeight = 76;  // 原始高度
 const minHeight = 60;        // 最小高度
@@ -66,5 +88,35 @@ onUnmounted(() => {
     font-size: 24px;
     font-weight: 900;
   }
+  .menu-container {
+    display: flex;
+    gap: 24px;
+    .menu-item {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      .menu-title {
+        width: fit-content;
+        font-size: 22px;
+        color: white;
+        white-space: nowrap
+      }
+      .icon {
+        fill: white;
+      }
+    }
+  }
+}
+.group{
+  width: 24px;
+  fill: white;
+}
+.home {
+  width: 22px;
+}
+.profile {
+  width: 18px;
 }
 </style>
