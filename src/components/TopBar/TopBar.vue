@@ -19,14 +19,6 @@
         <div class="menu-title">关于</div>
         <ProfileIcon class="icon profile"/>
       </div>
-      <!-- <div class="menu-item">
-        <div class="menu-title"></div>
-        <img src="" alt="">
-      </div>
-      <div class="menu-item">
-        <div class="menu-title"></div>
-        <img src="" alt="">
-      </div> -->
     </div>
   </div>
 </template>
@@ -105,18 +97,9 @@ onUnmounted(() => {
       }
       .icon {
         fill: white;
+        height: 20px;
       }
     }
   }
-}
-.group{
-  width: 24px;
-  fill: white;
-}
-.home {
-  width: 22px;
-}
-.profile {
-  width: 18px;
 }
 </style>
