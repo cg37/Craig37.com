@@ -1,9 +1,6 @@
 <template>
-  <TopBar />
+  <HomePage />
 </template>
-
 <script setup lang="ts">
-import TopBar from '@/components/TopBar/index'
+import HomePage from '@/page/HomePage.vue'
 </script>
-
-<style scoped></style>
