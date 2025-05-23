@@ -20,13 +20,8 @@ const threshold = 50;       // 滚动超过 100px 后才开始变化
 const currentHeight = ref(originalHeight);
 
 const bgOpacity = computed(() => {
-  // 如果高度 >= 原始高度，透明度 0（完全透明）
   if (currentHeight.value >= originalHeight) return 0;
-  
-  // 如果高度 <= 最小高度，透明度 1（纯黑）
   if (currentHeight.value <= minHeight) return 1;
-  
-  // 线性计算透明度（从 0 → 1）
   return 1 - (currentHeight.value - minHeight) / (originalHeight - minHeight);
 });
 
@@ -34,10 +29,8 @@ const handleScroll = () => {
   const scrollY = window.scrollY || window.pageYOffset;
 
   if (scrollY <= threshold) {
-    // 如果滚动距离 <= threshold，保持原始高度
     currentHeight.value = originalHeight;
   } else {
-    // 超过 threshold 后，高度随滚动距离减小
     const shrinkAmount = scrollY - threshold; // 计算超出阈值后的滚动距离
     currentHeight.value = Math.max(
       originalHeight - shrinkAmount * 0.1, // 调整 0.5 控制收缩速度
