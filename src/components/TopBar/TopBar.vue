@@ -16,7 +16,7 @@
         <GroupIcon class="group icon" />
       </div>
       <div class="menu-item">
-        <div class="menu-title">关于</div>
+        <div class="menu-title" @click="">关于</div>
         <ProfileIcon class="icon profile"/>
       </div>
     </div>
@@ -73,7 +73,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10%;
+  padding: 0 29%;
   box-shadow: 0 8px 8px -8px rgba($color: #000000, $alpha: 0.3);
   .blog-title {
     color: white;
@@ -89,13 +89,24 @@ onUnmounted(() => {
       justify-content: center;
       align-items: center;
       gap: 5px;
+      color: white;
+      transition: all .3s;
+      &:hover{
+        transition: all .3s;
+        color: #1E3E62;
+        .icon {
+        transition: all .3s;
+          fill: #1E3E62
+        }
+      }
       .menu-title {
         width: fit-content;
         font-size: 22px;
-        color: white;
-        white-space: nowrap
+        white-space: nowrap;
+        user-select: none;
       }
       .icon {
+        transition: all .3s;
         fill: white;
         height: 20px;
       }

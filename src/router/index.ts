@@ -1,11 +1,14 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
-
-import HomePage from '@/page/HomePage.vue'
+import { ERouterName } from '@/model/const'
 
 const routes = [
-  { path: '/', component: HomePage },
-  {
-    path: '/about', component: HomePage
+  { path: '/',
+    name: ERouterName.Home,
+    component: () => import('@/page/HomePage.vue') 
+  }, {
+    path: '/about', 
+    name: ERouterName.About,
+    component: () => import('@/page/AboutPage/AboutPage.vue')
   }
 ]
 
