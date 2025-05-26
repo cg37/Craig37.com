@@ -2,7 +2,7 @@
   <div class="first-paint">
     <TopBar />
   </div>
-  <div class="content" />
+  <div class="content" ></div>
 </template>
 <script setup lang="ts">
 import TopBar from '@/components/TopBar/index';
