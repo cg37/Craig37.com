@@ -1,21 +1,21 @@
-import axios from 'axios'
+import axios from "axios";
 
 const instance = axios.create({
   timeout: 12000,
-  baseURL: '',
+  baseURL: "",
   headers: {}
-})
+});
 
-instance.interceptors.request.use((config) => config)
+instance.interceptors.request.use((config) => config);
 
 instance.interceptors.response.use(
   (response) => {
-  //统一状态处理
-    return Promise.resolve(response)
+    //统一状态处理
+    return Promise.resolve(response);
   },
   (err) => {
-    Promise.reject(err)
+    Promise.reject(err);
   }
-)
+);
 
-export default instance
+export default instance;

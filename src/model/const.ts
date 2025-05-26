@@ -1,4 +1,4 @@
 export const ERouterName = {
-  About: 'About',
-  Home: 'Home'
-}
+  About: "About",
+  Home: "Home"
+};

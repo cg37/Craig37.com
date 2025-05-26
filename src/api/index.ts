@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from "axios";
-import request from './instance'
+import request from "./instance";
 
 interface RequestParamsInstance {
   url: string;
@@ -14,13 +14,16 @@ export type ResponeTypeValue<T> = {
   code: string;
   message: string;
   seuucess: boolean;
-}
+};
 
-export function GET<T = any>(url: string, opts?: AxiosRequestConfig):Promise<T> {
-  const options : AxiosRequestConfig = {
+export function GET<T = any>(
+  url: string,
+  opts?: AxiosRequestConfig
+): Promise<T> {
+  const options: AxiosRequestConfig = {
     url,
-    method: 'GET',
-    ...opts,
+    method: "GET",
+    ...opts
   };
   return request(options)
     .then((result) => {
@@ -31,6 +34,10 @@ export function GET<T = any>(url: string, opts?: AxiosRequestConfig):Promise<T> 
     });
 }
 
-export function POST<T = any>({url, data, config}: RequestParamsInstance): ResponseType<T> {
-  return request.post(url, data,config);
+export function POST<T = any>({
+  url,
+  data,
+  config
+}: RequestParamsInstance): ResponseType<T> {
+  return request.post(url, data, config);
 }
