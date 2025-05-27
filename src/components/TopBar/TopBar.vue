@@ -1,36 +1,37 @@
 <template>
-  <div 
-    class="container" 
-    :style="{height: `${currentHeight}px`, background: `rgba(31, 49, 68, ${bgOpacity})`}"
+  <div
+    class="container"
+    :style="{
+      height: `${currentHeight}px`,
+      background: `rgba(31, 49, 68, ${bgOpacity})`
+    }"
   >
-    <div class="blog-title">
-      Craig37
-    </div>
+    <div class="blog-title">Craig37</div>
     <div class="menu-container">
       <div class="menu-item">
         <div class="menu-title">首页</div>
-        <HomeIcon class="home icon"/>
+        <HomeIcon class="home icon" />
       </div>
       <div class="menu-item">
         <div class="menu-title">分类</div>
         <GroupIcon class="group icon" />
       </div>
       <div class="menu-item">
-        <div class="menu-title" @click="">关于</div>
-        <ProfileIcon class="icon profile"/>
+        <div class="menu-title" @click="clickAbout">关于</div>
+        <ProfileIcon class="icon profile" />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-import ProfileIcon from '@/assets/icon/user-solid.svg'
-import GroupIcon from '@/assets/icon/group-solid.svg'
-import HomeIcon from '@/assets/icon/home-solid.svg'
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import ProfileIcon from "@/assets/icon/user-solid.svg";
+import GroupIcon from "@/assets/icon/group-solid.svg";
+import HomeIcon from "@/assets/icon/home-solid.svg";
 
-const originalHeight = 76;  // 原始高度
-const minHeight = 60;        // 最小高度
-const threshold = 50;       // 滚动超过 100px 后才开始变化
+const originalHeight = 76; // 原始高度
+const minHeight = 60; // 最小高度
+const threshold = 50; // 滚动超过 100px 后才开始变化
 const currentHeight = ref(originalHeight);
 
 const bgOpacity = computed(() => {
@@ -53,12 +54,16 @@ const handleScroll = () => {
   }
 };
 
+const clickAbout = () => {
+  console.log("ablout");
+};
+
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 <style lang="scss" scoped>
@@ -90,13 +95,13 @@ onUnmounted(() => {
       align-items: center;
       gap: 5px;
       color: white;
-      transition: all .3s;
-      &:hover{
-        transition: all .3s;
-        color: #1E3E62;
+      transition: all 0.3s;
+      &:hover {
+        transition: all 0.3s;
+        color: #1e3e62;
         .icon {
-        transition: all .3s;
-          fill: #1E3E62
+          transition: all 0.3s;
+          fill: #1e3e62;
         }
       }
       .menu-title {
@@ -106,7 +111,7 @@ onUnmounted(() => {
         user-select: none;
       }
       .icon {
-        transition: all .3s;
+        transition: all 0.3s;
         fill: white;
         height: 20px;
       }
