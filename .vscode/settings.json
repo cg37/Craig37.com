@@ -1,5 +1,8 @@
 {
-  "cSpell.words": [
-    "unplugin"
-  ]
+  "cSpell.words": ["unplugin"],
+  "prettier.prettierPath": "",
+  "prettier.requireConfig": true,
+  "prettier.configPath": "prettier.config.js",
+  "prettier.endOfLine": "lf",
+  "prettier.trailingComma": "none"
 }
