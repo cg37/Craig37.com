@@ -3,20 +3,33 @@ import globals from "globals";
 import tseslint from "typescript-eslint"; //推荐 ts 规范
 import pluginVue from "eslint-plugin-vue"; //推荐 vue 规范
 import { defineConfig } from "eslint/config";
-import prettierRecommnded from "eslint-plugin-prettier/recommended";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default defineConfig([
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
-    plugins: { js },
-    extends: ["js/recommended"]
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } }
-  },
+  js.configs.recommended,
   tseslint.configs.recommended,
   pluginVue.configs["flat/essential"],
+  prettierRecommended,
+  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node
+      },
+      parserOptions: {
+        parser: tseslint.parser
+      }
+    },
+    rules: {
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto"
+        }
+      ]
+    }
+  },
   {
     files: ["**/*.vue"],
     languageOptions: {
@@ -26,7 +39,6 @@ export default defineConfig([
     }
   },
   {
-    ignores: ["*.d.ts"]
-  },
-  prettierRecommnded
+    ignores: ["*.d.ts", "node_modules", "dist/", "build/"]
+  }
 ]);

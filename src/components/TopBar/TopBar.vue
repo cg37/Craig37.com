@@ -3,7 +3,7 @@
     class="container"
     :style="{
       height: `${currentHeight}px`,
-      background: `rgba(31, 49, 68, ${bgOpacity})`,
+      background: `rgba(31, 49, 68, ${bgOpacity})`
     }"
   >
     <div class="blog-title">Craig37</div>
