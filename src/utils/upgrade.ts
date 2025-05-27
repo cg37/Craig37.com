@@ -1,4 +1,5 @@
-let lastSrcs: string | any[];
+import { AnyType } from "@/model/common";
+let lastSrcs: string | AnyType[];
 const scriptReg = /<scripts.*?src(["'])(?<src>.*?)\1.*?>/gm;
 
 async function extreactNewScripts() {

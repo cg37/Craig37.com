@@ -52,5 +52,8 @@
     "stc/*/*/.{html,json,css,scss}": [
       "npx prettier --write"
     ]
+  },
+  "prettier": {
+    "trailingComma": "none"
   }
 }
